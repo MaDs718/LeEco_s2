@@ -29,6 +29,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "LeEcoParts";
+
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)) {
