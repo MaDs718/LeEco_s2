@@ -17,12 +17,15 @@
 # Inherit device configuration
 $(call inherit-product, device/leeco/s2/full_s2.mk)
 
-# Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+# Inherit some common StatixOS stuff.
+$(call inherit-product, vendor/statix/config/common.mk)
+$(call inherit-product, vendor/statix/config/gsm.mk)
+$(call inherit-product, vendor/statix/config/dalvik/phone-xxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, vendor/statix/config/dalvik/phone-xxhdpi-3072-hwui-memory.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := s2
-PRODUCT_NAME := aosip_s2
+PRODUCT_NAME := statix_s2
 PRODUCT_BRAND := LeEco
 PRODUCT_MANUFACTURER := LeMobile
 

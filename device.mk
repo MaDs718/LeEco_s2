@@ -24,7 +24,7 @@ $(call inherit-product, vendor/leeco/s2/s2-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosip
+    $(LOCAL_PATH)/overlay-statix
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res

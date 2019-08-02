@@ -1,1 +1,1 @@
-add_lunch_combo aosip_s2-userdebug
+add_lunch_combo statix_s2-userdebug

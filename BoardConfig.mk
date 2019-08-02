@@ -82,9 +82,9 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
 TARGET_USES_QCOM_MM_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
+BOARD_SUPPORTS_SOUND_TRIGGER := false
 
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -179,6 +179,18 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
+# HALS
+# Hals
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8952
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8952
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8952
+TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8952
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/display-caf/$(TARGET_BOARD_PLATFORM) \
+    hardware/qcom/audio-caf/$(TARGET_BOARD_PLATFORM) \
+    hardware/qcom/media-caf/$(TARGET_BOARD_PLATFORM)
+
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_INIT_VENDOR_LIB := libinit_s2
@@ -223,7 +235,7 @@ TARGET_USES_OLD_MNC_FORMAT := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Sepolicy
-include device/qcom/sepolicy-legacy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Shims
